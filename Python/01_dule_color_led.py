@@ -24,15 +24,17 @@ def setColor(col):   # For example : col = 0x1122
 	
 	R_val = map(R_val, 0, 255, 0, 100)
 	G_val = map(G_val, 0, 255, 0, 100)
-	
+	print('R: ', R_val)
+	print('G: ', G_val)
 	p_R.ChangeDutyCycle(R_val)     # Change duty cycle
 	p_G.ChangeDutyCycle(G_val)
 
 def loop():
 	while True:
 		for col in colors:
+			# print(col)
 			setColor(col)
-			time.sleep(0.5)
+			time.sleep(3)
 
 def destroy():
 	p_R.stop()
